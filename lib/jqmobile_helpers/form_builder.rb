@@ -222,7 +222,8 @@ module JqmobileHelpers
         :description => field_options[:description],
         :div_id      => "#{@object_name}_#{method}_field",
         :required    => field_options[:required],
-        :decoration  => field_options[:decoration] || nil
+        :decoration  => field_options[:decoration] || nil,
+        :errors      => @object.errors[method].join(', ')
       }
       send("#{template}_template", locals).html_safe
     end
@@ -258,6 +259,7 @@ module JqmobileHelpers
       <div data-role="fieldcontain" id="#{l[:div_id]}" class="field">
 	      #{l[:label]}<br />
         #{l[:element]}#{l[:decoration]}
+        #{"<p class=\"field_errors\">#{l[:errors]}</p>" unless l[:errors].blank?}
         #{"<p class=\"field_description\">#{l[:description]}</p>" unless l[:description].blank?}
 	    </div>
 	    END
@@ -269,6 +271,7 @@ module JqmobileHelpers
       <<-END
       <div data-role="fieldcontain" id="#{l[:div_id]}" class="field">
 	      #{l[:element]} #{l[:label]} #{l[:decoration]}<br />
+        #{"<p class=\"field_errors\">#{l[:errors]}</p>" unless l[:errors].blank?}
 	      #{"<p class=\"field_description\">#{l[:description]}</p>" unless l[:description].blank?}
 	    </div>
 	    END
@@ -297,6 +300,7 @@ module JqmobileHelpers
       <div data-role="fieldcontain" id="#{l[:div_id]}" class="field">
 	      #{l[:label]}<br />
         <div class="habtm_check_boxes">#{l[:element]}</div>#{l[:decoration]}
+        #{"<p class=\"field_errors\">#{l[:errors]}</p>" unless l[:errors].blank?}
         #{"<p class=\"field_description\">#{l[:description]}</p>" unless l[:description].blank?}
 	    </div>
 	    END
