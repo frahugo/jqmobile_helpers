@@ -156,6 +156,7 @@ module JqmobileHelpers
     #
     def submit(value = nil, options = {})
       value = (@object.new_record?? "Create" : "Update") if value.nil?
+      value = submit_default_value
       build_shell(value, options, 'submit_button') { super }
     end
 
@@ -171,7 +172,19 @@ module JqmobileHelpers
       options.delete :label_for
       options.delete :required
 
-      text = @template.send(:h, text.blank?? method.to_s.humanize : text.to_s)
+      label_text = if text.blank?
+        I18n.t("helpers.label.#{object_name}.#{method}", :default => "").presence
+      else
+        text.to_s
+      end
+
+      label_text ||= if object && object.class.respond_to?(:human_attribute_name)
+        object.class.human_attribute_name(method)
+      end
+
+      label_text ||= method.humanize
+
+      text = @template.send(:h, label_text)
       text << ':'.html_safe if colon
       text << @template.content_tag(:span, "*", :class => "required") if required
       super
