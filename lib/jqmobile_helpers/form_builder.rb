@@ -257,7 +257,7 @@ module JqmobileHelpers
     def default_field_template(l = {})
       <<-END
       <div data-role="fieldcontain" id="#{l[:div_id]}" class="field">
-	      #{l[:label]}<br />
+	      #{l[:label]}
         #{l[:element]}#{l[:decoration]}
         #{"<p class=\"field_errors\">#{l[:errors]}</p>" unless l[:errors].blank?}
         #{"<p class=\"field_description\">#{l[:description]}</p>" unless l[:description].blank?}
@@ -270,7 +270,7 @@ module JqmobileHelpers
     def check_box_field_template(l = {})
       <<-END
       <div data-role="fieldcontain" id="#{l[:div_id]}" class="field">
-	      #{l[:element]} #{l[:label]} #{l[:decoration]}<br />
+	      #{l[:element]} #{l[:label]} #{l[:decoration]}
         #{"<p class=\"field_errors\">#{l[:errors]}</p>" unless l[:errors].blank?}
 	      #{"<p class=\"field_description\">#{l[:description]}</p>" unless l[:description].blank?}
 	    </div>
