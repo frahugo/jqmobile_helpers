@@ -13,27 +13,9 @@ module JqmobileHelpers
     #   # => <a data-icon="plus" data-iconpos="right" data-role="button" data-theme="c" href="http://google.com">New Post</a>
     #
     def button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button"}
 
-      if html_options.has_key?('data-icon')
-        default_options = default_options.merge({'data-icon' => html_options['data-icon']})
-      end
-
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Delete Button Link
@@ -46,23 +28,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="delete" data-iconpos="right" data-theme="c" href="/posts/destroy">Delete</a>
     #
     def delete_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "delete"}
-
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Left Button Link
@@ -75,23 +43,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="arrow-l" data-iconpos="right" data-theme="c" href="/posts/new">Back</a>
     #
     def left_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "arrow-l"}
-
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Right Button Link
@@ -104,23 +58,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="c" href="/posts/new">Proceed</a>
     #
     def right_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "arrow-r"}
-
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Up Button Link
@@ -133,23 +73,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="arrow-u" data-iconpos="top" data-theme="c" href="/posts/new">top</a>
     #
     def up_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "arrow-u"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Down Button Link
@@ -162,23 +88,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="arrow-d" data-iconpos="bottom" data-theme="c" href="/posts/new">bottom</a>
     #
     def down_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "arrow-d"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Plus Button Link
@@ -191,23 +103,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="plus" data-iconpos="right" data-theme="c" href="/posts/new">plus</a>
     #
     def plus_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "plus"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Minus Button Link
@@ -220,23 +118,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="minus" data-iconpos="right" data-theme="c" href="/posts/new">minus</a>
     #
     def minus_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "minus"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Check Button Link
@@ -249,23 +133,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="check" data-iconpos="right" data-theme="c" href="/posts/new">check</a>
     #
     def check_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "check"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Gear Button Link
@@ -278,23 +148,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="gear" data-iconpos="right" data-theme="c" href="/posts/new">gear</a>
     #
     def gear_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "gear"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Refresh Button Link
@@ -307,23 +163,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="refresh" data-iconpos="right" data-theme="c" href="/posts/new">refresh</a>
     #
     def refresh_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "refresh"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Forward Button Link
@@ -336,23 +178,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="forward" data-iconpos="right" data-theme="c" href="/posts/new">forward</a>
     #
     def forward_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "forward"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Back Button Link
@@ -365,23 +193,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="back" data-iconpos="right" data-theme="c" href="/posts/new">back</a>
     #
     def back_button_link(name, link, options = {})
+      default_options = {'data-role' => "button", 'data-icon' => "back", 'data-rel' => 'back', 'data-direction' => 'reverse' }
 
-      html_options = options.stringify_keys!
-      default_options = {'data-role' => "button", 'data-icon' => "back"}
-
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Grid Button Link
@@ -394,23 +208,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="grid" data-iconpos="right" data-theme="c" href="/posts/new">grid</a>
     #
     def grid_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "grid"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Star Button Link
@@ -423,23 +223,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="star" data-iconpos="right" data-theme="c" href="/posts/new">star</a>
     #
     def star_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "star"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Alert Button Link
@@ -452,23 +238,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="alert" data-iconpos="right" data-theme="c" href="/posts/new">alert</a>
     #
     def alert_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "alert"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Info Button Link
@@ -481,23 +253,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="info" data-iconpos="right" data-theme="c" href="/posts/new">info</a>
     #
     def info_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "info"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Home Button Link
@@ -510,23 +268,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="home" data-iconpos="right" data-theme="c" href="/posts/new">home</a>
     #
     def home_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "home"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Search Button Link
@@ -539,23 +283,9 @@ module JqmobileHelpers
     #   # => <a data-role="button" data-icon="search" data-iconpos="right" data-theme="c" href="/posts/new">search</a>
     #
     def search_button_link(name, link, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-icon' => "search"}
 
-      if html_options.has_key?('data-theme')
-        default_options = default_options.merge({'data-theme' => html_options['data-theme']})
-      end
-
-      if html_options.has_key?('data-iconpos')
-        default_options = default_options.merge({'data-iconpos' => html_options['data-iconpos']})
-      end
-
-      if html_options.has_key?('data-inline')
-        default_options = default_options.merge({'data-inline' => html_options['data-inline']})
-      end
-
-      content_tag(:a, name, {:href => link}.merge(default_options))
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
     
     
@@ -577,9 +307,9 @@ module JqmobileHelpers
     #
     #
     def back_split_button(name, link, options ={} )
-      html_options = options.stringify_keys!
       default_options = {'data-role' => "button", 'data-rel' => "back"}  
-      content_tag(:a, name, {:href => link}.merge(default_options))
+
+      link_to name, link, default_options.merge(options.stringify_keys!)
     end
 
     # Grouped Button
@@ -603,15 +333,9 @@ module JqmobileHelpers
     #          <a data-icon="refresh" data-role="button" href="/buttons">refresh</a>
     #        </div>
     def group_button(content, options = {})
-
-      html_options = options.stringify_keys!
       default_options = {'data-role'=> "controlgroup"}
 
-      if html_options.has_key?('data-type')
-        default_options = default_options.merge({'data-type' => html_options['data-type']})
-      end
-
-      content_tag(:div, content, default_options, false)
+      content_tag(:div, content, default_options.merge(options.stringify_keys!), false)
     end
 
     # Inline Buttons
@@ -626,9 +350,7 @@ module JqmobileHelpers
     #          <a data-icon="refresh" data-role="button" href="/buttons">refresh</a>
     #        </div>
     #
-
     def inline_button(content)
-
       default_options = {'data-inline'=> "true", 'data-role'=> "controlgroup", 'data-type' => "horizontal"}
 
       content_tag(:div, content, default_options, false)
